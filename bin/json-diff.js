@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../lib/cli')(process.argv.slice(2));
+require('../src/cli')(process.argv.slice(2));
