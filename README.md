@@ -9,7 +9,7 @@ Does exactly what you think it does:
 Installation
 ------------
 
-    npm install -g json-diff
+    npm install -g json-diff2
 
 
 Contribution policy
@@ -27,27 +27,28 @@ Usage
 
 Simple:
 
-    json-diff a.json b.json
+    json-diff2 a.json b.json
 
 Detailed:
 
-    % json-diff --help
-    Usage: json-diff [-vjCk] first.json second.json
+    % json-diff2 --help
+    Usage: json-diff2 [-vjCk] [-p DECIMALS] first.json second.json
 
     Arguments:
-      first.json            Old file
-      second.json           New file
+      first.json                Old file
+      second.json               New file
 
     General options:
-      -v, --verbose         Output progress info
-      -C, --[no-]color      Colored output
-      -j, --raw-json        Display raw JSON encoding of the diff
-      -k, --keys-only       Compare only the keys, ignore the differences in values
-      -h, --help            Display this usage information
+      -v, --verbose             Output progress info
+      -C, --[no-]color          Colored output
+      -j, --raw-json            Display raw JSON encoding of the diff
+      -k, --keys-only           Compare only the keys, ignore the differences in values
+      -p, --precision DECIMALS  Use DECIMALS for number comparisons (object values only)
+      -h, --help                Display this usage information
 
 In javascript (ES5):
 
-    var jsonDiff = require('json-diff')
+    var jsonDiff = require('json-diff2')
     
     console.log(jsonDiff.diffString({ foo: 'bar' }, { foo: 'baz' }));
     
@@ -65,7 +66,7 @@ In javascript (ES5):
 
 In javascript (ES6+):
 
-    import { diffString, diff } from 'json-diff';
+    import { diffString, diff } from 'json-diff2';
     
     console.log(diffString({ foo: 'bar' }, { foo: 'baz' }));
     console.log(diff({ foo: 'bar' }, { foo: 'baz' }));

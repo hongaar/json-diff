@@ -12,7 +12,7 @@ const { colorize } = require('./colorize');
 
 module.exports = function(argv) {
   const options = require('dreamopt')([
-    "Usage: json-diff [-vjCkf] first.json second.json",
+    "Usage: json-diff2 [-vjCk] [-p DECIMALS] first.json second.json",
 
     "Arguments:",
     "  first.json                 Old file #var(file1) #required",

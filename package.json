@@ -1,6 +1,6 @@
 {
   "name": "json-diff2",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "JSON diff (JS version)",
   "author": "Joram van den Boezem <joram@vandenboezem.nl>",
   "contributors": [
@@ -11,7 +11,7 @@
   "repository": {
     "url": "git@github.com:hongaar/json-diff2.git"
   },
-  "bin": "bin/json-diff.js",
+  "bin": "bin/json-diff2.js",
   "main": "src/index.js",
   "files": [
     "src/*"
