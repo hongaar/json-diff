@@ -15,6 +15,11 @@ const { colorize } = require('./colorize');
 const isScalar = obj => (typeof obj !== 'object') || (obj === null);
 
 
+const toPrecision = (x, decimals) => {
+  return parseFloat(x.toFixed(Math.max(0, decimals)))
+}
+
+
 const objectDiff = function(obj1, obj2, options) {
   let key, value1, value2;
   if (options == null) { options = {}; }
@@ -147,7 +152,7 @@ const arrayDiff = function(obj1, obj2, options) {
           const item = seq1[i];
           if (isScalarized(item, originals1)) {
             if (!isScalarized(item, originals2)) {
-              throw new AssertionError(`internal bug: isScalarized(item, originals1) != isScalarized(item, originals2) for item ${JSON.stringify(item)}`);
+              throw new Error(`internal bug: isScalarized(item, originals1) != isScalarized(item, originals2) for item ${JSON.stringify(item)}`);
             }
             const item1 = descalarize(item, originals1);
             const item2 = descalarize(item, originals2);
@@ -224,10 +229,16 @@ var diffWithScore = function(obj1, obj2, options) {
     switch (type1) {
       case 'object':
         return objectDiff(obj1, obj2, options);
-        break;
       case 'array':
         return arrayDiff(obj1, obj2, options);
-        break;
+      case 'number':
+        if (options.precision) {
+          const num1 = toPrecision(obj1, options.precision)
+          const num2 = toPrecision(obj2, options.precision)
+          if (num1 === num2) {
+            return [100, undefined];
+          }
+        }
     }
   }
 

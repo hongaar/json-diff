@@ -2,8 +2,9 @@
   "name": "json-diff2",
   "version": "0.6.0",
   "description": "JSON diff (JS version)",
-  "author": "Andrey Tarantsov <andreyvit@me.com>",
+  "author": "Joram van den Boezem <joram@vandenboezem.nl>",
   "contributors": [
+    "Andrey Tarantsov <andreyvit@me.com>",
     "Gavriel Fleischer <flocsy@gmail.com>"
   ],
   "homepage": "https://github.com/hongaar/json-diff2",

@@ -7,22 +7,23 @@
 const fs  = require('fs');
 const tty = require('tty');
 
-const { diff } = require('./index');
+const { diff } = require('.');
 const { colorize } = require('./colorize');
 
 module.exports = function(argv) {
   const options = require('dreamopt')([
-    "Usage: json-diff [-vjCk] first.json second.json",
+    "Usage: json-diff [-vjCkf] first.json second.json",
 
     "Arguments:",
-    "  first.json              Old file #var(file1) #required",
-    "  second.json             New file #var(file2) #required",
+    "  first.json                 Old file #var(file1) #required",
+    "  second.json                New file #var(file2) #required",
 
     "General options:",
-    "  -v, --verbose           Output progress info",
-    "  -C, --[no-]color        Colored output",
-    "  -j, --raw-json          Display raw JSON encoding of the diff #var(raw)",
-    "  -k, --keys-only         Compare only the keys, ignore the differences in values #var(keysOnly)"
+    "  -v, --verbose              Output progress info",
+    "  -C, --[no-]color           Colored output",
+    "  -j, --raw-json             Display raw JSON encoding of the diff #var(raw)",
+    "  -k, --keys-only            Compare only the keys, ignore the differences in values #var(keysOnly)",
+    "  -p, --precision DECIMALS   Use DECIMALS for number comparisons (object values only)"
   ], argv);
 
   if (options.verbose) { process.stderr.write(`${JSON.stringify(options, null, 2)}\n`); }

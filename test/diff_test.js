@@ -133,6 +133,13 @@ describe('diff({keysOnly: true})', function() {
 });
 
 
+describe('diff({precision})', function () {
+
+  it("should return undefined for two identical numbers when rounded", () => assert.deepEqual(undefined, diff(41.999999, 42, { precision: 5 })));
+
+});
+
+
 describe('diffString', function() {
 
   const readExampleFile = file => fs.readFileSync(Path.join(__dirname, '../example', file), 'utf8');
