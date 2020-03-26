@@ -1,14 +1,14 @@
 {
-  "name": "json-diff",
-  "version": "0.5.3",
-  "description": "JSON diff",
+  "name": "json-diff2",
+  "version": "0.6.0",
+  "description": "JSON diff (JS version)",
   "author": "Andrey Tarantsov <andreyvit@me.com>",
   "contributors": [
     "Gavriel Fleischer <flocsy@gmail.com>"
   ],
-  "homepage": "https://github.com/hongaar/json-diff",
+  "homepage": "https://github.com/hongaar/json-diff2",
   "repository": {
-    "url": "git@github.com:hongaar/json-diff.git"
+    "url": "git@github.com:hongaar/json-diff2.git"
   },
   "bin": "bin/json-diff.js",
   "main": "src/index.js",
