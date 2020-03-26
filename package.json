@@ -1,21 +1,22 @@
 {
+  "name": "json-diff",
+  "version": "0.5.3",
+  "description": "JSON diff",
   "author": "Andrey Tarantsov <andreyvit@me.com>",
   "contributors": [
     "Gavriel Fleischer <flocsy@gmail.com>"
   ],
-  "name": "json-diff",
-  "description": "JSON diff",
-  "version": "0.5.3",
-  "homepage": "https://github.com/andreyvit/json-diff",
+  "homepage": "https://github.com/hongaar/json-diff",
   "repository": {
-    "url": "git@github.com:andreyvit/json-diff.git"
+    "url": "git@github.com:hongaar/json-diff.git"
   },
-  "main": "lib/index.js",
   "bin": "bin/json-diff.js",
+  "main": "src/index.js",
+  "files": [
+    "src/*"
+  ],
   "scripts": {
-    "prepare": "coffee -c lib",
-    "test": "mocha test/*.coffee",
-    "cov": "rm -rf lib-cov; jscoverage lib lib-cov; env JSLIB=lib-cov mocha -R dot && env JSLIB=lib-cov mocha -R html-cov >coverage.html; open coverage.html"
+    "test": "mocha"
   },
   "dependencies": {
     "cli-color": "~0.1.6",
@@ -23,10 +24,8 @@
     "dreamopt": "~0.6.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.12.7",
-    "mocha": "~1.7.0"
+    "mocha": "^7.1.1"
   },
-  "optionalDependencies": {},
   "engines": {
     "node": "*"
   }
